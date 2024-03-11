@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BumbleBeat</title>
     <link rel="stylesheet" href="../public/styles/style.css" />
+    <script
+    src="https://kit.fontawesome.com/012a2bcae9.js"
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  </style>
   </head>
   <body>
     <nav>
       <ul>
         <li>
-          <a href="../index.html">Home</a>
-          <a href="#">Search Bar</a>
+          <a href="../index.html">Home</a></li>
+          <li>
+            <input type="text" placeholder="Search..">
+          </li>
+          <a href="../top.html">Top Charts</a>
           <a href="../playlists/">Playlists</a>
           <a href="../music/">Music</a>
           <a href="../podcasts/">Podcasts</a>
@@ -21,17 +31,96 @@
       </ul>
     </nav>
 
-    <main>
-      <div class="home-new"></div>
-      <div class="home-updated"></div>
-      <div class="home-playlist">USER SELECTED OR PUBLIC PLAYLIST</div>
+    <main class="playlist">
+      <div class="home-new">
+        <h2>Newest Top Playlists</h2>
+        <ol>
+          <li>Daily Mix</li>
+          <li>Country Bops</li>
+          <li>HK is Home</li>
+        </ol>
+      </div>
+      <div class="home-updated">
+        <h2>Recently Updated Playlists</h2>
+        <ul>
+          <li>Daily Mix</li>
+          <li>US Top 100</li>
+          <li>Janet's List of Lists</li>
+        </ul>
+      </div>
+      <div class="home-playlist"><h2>
+        <i class="fa-solid fa-heart"></i> Playlist Songs
+      </h2>
+    
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Album</th>
+            <th scope="col"><i class="fa-regular fa-clock"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><a href="/music/artists/taylor-swift/albums/speak-now.html#long-live">Long Live</a>
+              <br />Taylor Swift
+            </td>
+            <td>Speak Now</td>
+            <td>5:18</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td><a href="/music/artists/taylor-swift/albums/speak-now.html#long-live">Long Live</a>
+              <br />Taylor Swift
+            </td>
+            <td>Speak Now</td>
+            <td>5:18</td>
+          </tr><tr>
+            <th scope="row">3</th>
+            <td><a href="/music/artists/taylor-swift/albums/speak-now.html#long-live">Long Live</a>
+              <br />Taylor Swift
+            </td>
+            <td>Speak Now</td>
+            <td>5:18</td>
+          </tr><tr>
+            <th scope="row">4</th>
+            <td><a href="/music/artists/taylor-swift/albums/speak-now.html#long-live">Long Live</a>
+              <br />Taylor Swift
+            </td>
+            <td>Speak Now</td>
+            <td>5:18</td>
+          </tr><tr>
+            <th scope="row">5</th>
+            <td><a href="/music/artists/taylor-swift/albums/speak-now.html#long-live">Long Live</a>
+              <br />Taylor Swift
+            </td>
+            <td>Speak Now</td>
+            <td>5:18</td>
+          </tr><tr>
+            <th scope="row">6</th>
+            <td><a href="/music/artists/taylor-swift/albums/speak-now.html#long-live">Long Live</a>
+              <br />Taylor Swift
+            </td>
+            <td>Speak Now</td>
+            <td>5:18</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    </div>
     </main>
 
     <footer>
-      <div class="footer">Social Media</div>
+      <div class="footer"><h3>Social Media</h3>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
       <div class="footer">Site Navigation</div>
       <div class="footer">Site Links 2</div>
-      <div class="footer">Logo</div>
+      <div class="footer"><img src="../public/images/bumblebeat-logo.png"></div>
     </footer>
   </body>
 </html>

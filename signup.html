@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BumbleBeat - Sign Up</title>
     <link rel="stylesheet" href="/public/styles/style.css" />
+    <script
+    src="https://kit.fontawesome.com/012a2bcae9.js"
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+  </style>
   </head>
   <body>
     <nav>
@@ -13,7 +20,7 @@
           <a href="index.html">Home</a>
         </li>
         <li>
-          <a href="#">Search Bar</a>
+          <input type="text" placeholder="Search..">
         </li>
         <li>
           <a href="playlists/">Playlists</a>
@@ -37,13 +44,59 @@
       <div class="sign-up">
         <form class="new-user"></form>
       </div>
+
+      <div class="register">
+        <div class="register-left">
+          <h1>What's the buzz?</h1>
+          <img src="/public/images/bumblebeat-logo.png">
+        </div>
+        <div class="register-right">
+          <form id="register" class="register-form">
+            <label>First Name</label>
+            <br />
+            <input type="text" name="firstname" id="firstname" placeholder="First Name">
+            <br />
+            <label>Last Name</label>
+            <br />
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+            <br />
+            <label>Listener or Artist</label>
+            <br />
+            <div><input type="radio" id="listener" name="reg-type" value="Listener" />
+            <label for="reg-type">Listener</label></div>
+            <br />
+            <div><input type="radio" id="artist" name="reg-type" value="Artist" />
+            <label for="reg-type">Artist</label></div>
+            <br />
+            <br />
+            <label>Email</label>
+            <br />
+            <input type="email" name="email" id="email" placeholder="E-Mail">
+            <br />
+            <label>Username</label>
+            <br />
+            <input type="text" name="username" id="username" placeholder="Username">
+            <br /><br />
+            <label>Password</label>
+            <br />
+            <input type="password" name="password" id="password" placeholder="Password">
+   
+          </form>
+          <br />
+
+          <button>Register</button>
+
     </main>
 
     <footer>
-      <div class="footer">Social Media</div>
+      <div class="footer"><h3>Social Media</h3>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
       <div class="footer">Site Navigation</div>
       <div class="footer">Site Links 2</div>
-      <div class="footer">Logo</div>
+      <div class="footer"><img src="public/images/bumblebeat-logo.png"></div>
     </footer>
   </body>
 </html>

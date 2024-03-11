@@ -48,13 +48,24 @@ nav ul li {
     list-style-type: none;
 }
 
+nav input {
+  width: 100%;
+  padding: .5rem;
+  border-radius: 20px;
+}
+
 footer {
     display: flex;
     justify-content: space-around;
     margin: 2em auto;
 }
 
-.index-main {
+footer img {
+  width: 200px;
+  filter: drop-shadow(0 0 1.5rem var(--white));
+}
+
+main {
     width: 85%;
     margin: auto;
 }
@@ -305,11 +316,137 @@ i {
     text-align: center;
   }
 
-  .now-playing-song {
+  .top-charts .now-playing-song {
     height: 8em;
     width: 8em;
     border-radius: 50%;
     background-image: url(../images/pexels-spring-toan-3704041.jpg);
     background-size: cover;
     z-index: 1;
+    transform: scale(.5);
+  }
+
+  .top-charts .playback-row {
+    transform: scale(.6);
+  }
+
+  /* login */
+  .login, .register {
+    margin: auto;
+    display: flex;
+  }
+
+  .login-left, .register-left {
+    /* background-image: url("../images/pexels-spring-toan-3704041.jpg"); */
+    width: 50%;
+    /* height: 50vh; */
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+  }
+
+  .login-left h1, .register-left h1 {
+    margin: auto;
+    text-align: center;
+  }
+
+  .login-left img, .register-left img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    width: 60%;
+  }
+
+  .login-right, .register-right {
+    margin: auto;
+    width: 50%;
+    padding-left: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .login-form, .register-form {
+    margin: auto;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    line-height: .5em;    
+  }
+
+  .login-form input, .register-form input {
+    padding: .5rem;
+    border-radius: 20px;
+    width: 75%;
+  }
+
+  .login button, .register button {
+    border-radius: 2em;
+    border: none;
+    width: 8em;
+    height: 2em;
+    background-color: var(--gold);
+    /* margin: auto; */
+  }
+
+  .login button:hover, .register button:hover{
+    background-color: var(--darkblack);
+    color: var(--gold);
+  }
+
+  #register {
+    font-size: .75em;
+  }
+
+ /* Album Page */
+
+.album {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+  .album-card {
+    width: 45%;
+  }
+  .album-card img {
+    max-width: 75%;
+  }
+  
+  .album-info {
+    width: 45%;
+  }
+
+  .album-songs {
+    flex-basis: 100%;
+  }
+
+  /* playlists */
+
+  .playlist {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .home-new,
+  .home-updated {
+    width: 45%;
+    flex: 1;
+  }
+  
+  .home-playlist {
+    flex-basis: 100%;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  .home-playlist table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .home-playlist th {
+    text-align: center;
   }
