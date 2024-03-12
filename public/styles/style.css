@@ -450,3 +450,39 @@ i {
   .home-playlist th {
     text-align: center;
   }
+
+  .home-playlist table tr:hover{
+    background-color: var(--gold);
+    color: var(--darkblack)
+  }
+
+  .home-playlist table .fa-ban:hover {
+    color: red;
+  }
+
+  /* artist page */
+
+  .artist-profile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .artist-card {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .artist-card img {
+    width: 15em;
+    margin: auto;
+  }
+
+  .artist-name {
+    width: 45%;
+    margin: auto;
+  }
+
+  .artist-album {
+    flex-basis: 100%;
+  }
