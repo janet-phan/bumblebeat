@@ -29,9 +29,6 @@
           <a href="music/">Music</a>
         </li>
         <li>
-          <a href="podcasts/">Podcasts</a>
-        </li>
-        <li>
           <a href="settings.html">Account Settings</a>
         </li>
         <li>
@@ -52,34 +49,34 @@
         </div>
         <div class="register-right">
           <form id="register" class="register-form">
-            <label>First Name</label>
+            <label>First Name*</label>
             <br />
-            <input type="text" name="firstname" id="firstname" placeholder="First Name">
+            <input type="text" name="firstname" id="firstname" placeholder="First Name" reqiored>
             <br />
             <label>Last Name</label>
             <br />
             <input type="text" name="lastname" id="lastname" placeholder="Last Name">
             <br />
-            <label>Listener or Artist</label>
+            <label>Listener or Artist*</label>
             <br />
-            <div><input type="radio" id="listener" name="reg-type" value="Listener" />
+            <div><input type="radio" id="listener" name="reg-type" value="Listener"  checked />
             <label for="reg-type">Listener</label></div>
             <br />
             <div><input type="radio" id="artist" name="reg-type" value="Artist" />
             <label for="reg-type">Artist</label></div>
             <br />
             <br />
-            <label>Email</label>
+            <label>Email*</label>
             <br />
-            <input type="email" name="email" id="email" placeholder="E-Mail">
+            <input type="email" name="email" id="email" placeholder="E-Mail" required>
             <br />
-            <label>Username</label>
+            <label>Username*</label>
             <br />
-            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="text" name="username" id="username" placeholder="Username" required>
             <br /><br />
-            <label>Password</label>
+            <label>Password*</label>
             <br />
-            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password" required>
    
           </form>
           <br />
@@ -90,9 +87,9 @@
 
     <footer>
       <div class="footer"><h3>Social Media</h3>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-x-twitter"></i>
-        <i class="fa-brands fa-youtube"></i>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
       </div>
       <div class="footer">Site Navigation</div>
       <div class="footer">Site Links 2</div>

@@ -98,6 +98,7 @@ main {
     height: 20em;
     background-color: var(--yellow);
     box-shadow: 0 0 10px var(--yellow);
+    position: absolute;
 }
 
 .current-artist {
@@ -139,7 +140,7 @@ i {
     /* background: white; */
     transform: rotate(180deg);
     position: relative;
-    margin-top: -10em;
+    margin-top: 10em;
     margin-left: 7.75em;
   }
   .barOverflow{ /* Wraps the rotating .bar */
@@ -377,6 +378,9 @@ i {
     padding: .5rem;
     border-radius: 20px;
     width: 75%;
+  }
+  .register-form input[type=radio] {
+    width: 10%;
   }
 
   .login button, .register button {
