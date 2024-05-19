@@ -43,8 +43,8 @@ app.use(passport.session());
 // });
 
 app.get('/', (req, res) => {
-  const html = 
-  <!DOCTYPE html>
+  const html = `
+    <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -160,10 +160,12 @@ app.get('/', (req, res) => {
         <div class="footer"><img src="public/images/bumblebeat-logo.png"></div>
       </footer>
     </body>
-  </html>
+    </html>`
   ;
+
   res.send(html);
 });
+
 
 
 
