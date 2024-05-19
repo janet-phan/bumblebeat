@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
+mongoose.set('strictQuery', false);
+// main().catch((err) => console.log(err));
 
-main().catch(err => console.log(err));
+// async function main() {
+//     await mongoose.connect(process.env.DB_URL)
+//     console.log("MongoDB is connected")
+// }
 
-async function main() {
-    // await mongoose.connect('mongodb://127.0.0.1:27107/test');
-}
+mongoose
+  .connect(process.env.DB_URL)
+  .then(() => console.log("Mongodb is connected"))
+  .catch((err) => console.log(err));

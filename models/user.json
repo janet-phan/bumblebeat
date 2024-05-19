@@ -1,0 +1,18 @@
+[
+    {
+      "firstName": "Janet",
+      "lastName": "Phan",
+      "username": "janetp",
+      "password": "password123",
+      "salt": "salt123",
+      "strategy": "local"
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "username": "janesmith",
+      "password": "password456",
+      "salt": "salt456",
+      "strategy": "local"
+    }
+]
