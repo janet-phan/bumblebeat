@@ -42,7 +42,7 @@ app.use(passport.session());
 //   response.status(200).json({success: {message: "This route points to the Home page"}, statusCode: 200});
 // });
 
-app.get('/', (request, response, next) => {
+app.get('/', (req, res) => {
   const html = 
   <!DOCTYPE html>
   <html lang="en">
@@ -53,8 +53,7 @@ app.get('/', (request, response, next) => {
       <link rel="stylesheet" href="/public/styles/style.css" />
       <script
         src="https://kit.fontawesome.com/012a2bcae9.js"
-        crossorigin="anonymous"
-      ></script>
+        crossorigin="anonymous"></script>
       <style>
         @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
       </style>
@@ -88,11 +87,8 @@ app.get('/', (request, response, next) => {
           <div class="column1">
             <div
               class="currently-playing"
-              style="
-                background-image: url(public/images/pexels-spring-toan-3704041.jpg);
-                background-size: cover;
-              "
-            ></div>
+              style="background-image: url(public/images/pexels-spring-toan-3704041.jpg);
+                background-size: cover;"></div>
             <div class="progress">
               <div class="barOverflow">
                 <div class="bar"></div>
@@ -164,14 +160,12 @@ app.get('/', (request, response, next) => {
         <div class="footer"><img src="public/images/bumblebeat-logo.png"></div>
       </footer>
     </body>
-  </html> ;
+  </html>
+  ;
   res.send(html);
 });
 
-// app.get("/", (request, response, next) => {
-//     const filePath = path.join(__dirname, 'index.html');
-//     response.sendFile(filePath);
-//   });
+
 
 app.use(songRoutes);
 app.use(artistRoutes);
