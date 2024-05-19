@@ -43,8 +43,7 @@ app.use(passport.session());
 // });
 
 app.get("/", (request, response, next) => {
-    const filePath = path.join(__dirname, 'views', 'index.html');
-    response.sendFile(filePath);
+    response.redirect('/index.html');
   });
 
 app.use(songRoutes);
