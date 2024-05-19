@@ -392,6 +392,12 @@ i {
     /* margin: auto; */
   }
 
+  .google-login button {
+    width: fit-content;
+    margin-top: 1em;
+    padding: 0 .5em;
+  }
+
   .login button:hover, .register button:hover{
     background-color: var(--darkblack);
     color: var(--gold);

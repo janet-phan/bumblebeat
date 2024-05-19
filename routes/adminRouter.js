@@ -38,7 +38,7 @@ router.delete("/music/songs/:_id/delete", deleteSong);
     });
     
     router.post("/register", register);
-    
+
 //implement Google Strategy
 
 //GET to the path of /login/google with passport authentication of the google route and providing a scope object of an array with a string of profile

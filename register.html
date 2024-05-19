@@ -32,7 +32,7 @@
           <a href="settings.html">Account Settings</a>
         </li>
         <li>
-          <a href="login.html">Login</a>
+          <a href="login.html">Login</a> or <a href="register.html">Register</a>
         </li>
       </ul>
     </nav>
@@ -44,14 +44,14 @@
 
       <div class="register">
         <div class="register-left">
-          <h1>What's the buzz?</h1>
+          <h1>Register</h1>
           <img src="/public/images/bumblebeat-logo.png">
         </div>
         <div class="register-right">
-          <form id="register" class="register-form">
+          <form id="register" class="register-form" action="/register" method="POST">
             <label>First Name*</label>
             <br />
-            <input type="text" name="firstname" id="firstname" placeholder="First Name" reqiored>
+            <input type="text" name="firstname" id="firstname" placeholder="First Name" required />
             <br />
             <label>Last Name</label>
             <br />
@@ -68,20 +68,25 @@
             <br />
             <label>Email*</label>
             <br />
-            <input type="email" name="email" id="email" placeholder="E-Mail" required>
+            <input type="email" name="email" id="email" placeholder="E-Mail" required />
             <br />
             <label>Username*</label>
             <br />
-            <input type="text" name="username" id="username" placeholder="Username" required>
+            <input type="text" name="username" id="username" placeholder="Username" required />
             <br /><br />
             <label>Password*</label>
             <br />
-            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Password" required />
    
-          </form>
-          <br />
+            <br />          <br />
+            <button type="submit" value="Sign Up!">Sign Up!</button>
 
-          <button>Register</button>
+  
+          </form>
+          <div class="google-login">
+            <a href="/auth/google"><button>Sign up with Google</button></a>
+          </div>
+
 
     </main>
 

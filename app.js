@@ -38,14 +38,20 @@ app.use(
 app.use(passport.initialize()); 
 app.use(passport.session()); 
 
+// app.get("/", (request, response, next) => {
+//   response.status(200).json({success: {message: "This route points to the Home page"}, statusCode: 200});
+// });
+
 app.get("/", (request, response, next) => {
-  response.status(200).json({success: {message: "This route points to the Home page"}, statusCode: 200});
-});
+    const filePath = path.join(__dirname, 'index.html');
+    response.sendFile(filePath);
+  });
 
 app.use(songRoutes);
 app.use(artistRoutes);
 app.use(siteRoutes); 
 app.use(authRoutes); 
+
 
 //server
 app.listen(PORT, () => {
