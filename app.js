@@ -46,7 +46,7 @@ app.get("/", (request, response, next) => {
     const filePath = path.join(__dirname, 'views', 'index.html');
     response.sendFile(filePath);
   });
-  
+
 app.use(songRoutes);
 app.use(artistRoutes);
 app.use(siteRoutes); 
@@ -56,5 +56,5 @@ app.use(authRoutes);
 //server
 app.listen(PORT, () => {
   console.log(`Bumblebeat's server is currently listening on port ${PORT}`);
-  console.log(`http://localhost:${PORT}/`)
+//   console.log(`http://localhost:${PORT}/`)
 });

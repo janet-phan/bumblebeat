@@ -1,24 +1,22 @@
 const artistData = [
     {
-      _id: '001',
-      artistName:'Solomon', 
-      albumList: 'Northrup',
-      bio: 'Solomon Northup was an American abolitionist and the primary author of the memoir Twelve Years a Slave. A free-born African American from New York, he was the son of a freed slave and a free woman of color. A farmer and a professional violinist, Northup had been a landowner in Washington County, New York.'
+      _id: "001",
+      artistName:"Taylor Swift", 
+      albumList: "The Tortured Poets Department, 1989 , Speak Now, Midnights, Red , Fearless Taylor's Version, evermore, folklore, Lover, reputation, 1989, Red, Speak Now, Fearless, Taylor Swift",
+      bio: "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. A subject of widespread public interest with a vast fanbase, she has influenced the music industry, popular culture, and politics through her songwriting, artistry, entrepreneurship, and advocacy. - Wikipedia"
     },
     {
-      _id: '002',
-      firstName:'Katsuhiro', 
-      lastName: 'Otomo',
-      birthYear: 1954, 
-      bio: 'Katsuhiro Otomo is a Japanese manga artist, screenwriter, animator and film director. He is best known as the creator of Akira, in terms of both the original 1982 manga series and the 1988 animated film adaptation.'
+      _id: "002",
+      artistName:"Selena Gomez", 
+      albumList: "Kiss & Tell, A Year Without Rain, When the Sun Goes Down, Stars Dance, Revival, Rare",
+      bio: "Selena Marie Gomez (born July 22, 1992) is an American singer, songwriter, actress, producer, and businesswoman. - Wikipedia"
     },
     {
-      _id: '003',
-      firstName:'Roald', 
-      lastName: 'Dahl',
-      birthYear: 1916, 
-      bio: 'Khaled Hosseini is an Afghan-American novelist, physician, activist, humanitarian, and UNHCR goodwill ambassador.'
+      _id: "003",
+      artistName:"Weeknd", 
+      albumList: "Starboy, Dawn FM",
+      bio: "Abel Makkonen Tesfaye (born February 16, 1990), known professionally as the Weeknd, is a Canadian singer-songwriter. He is known for his unconventional music production, artistic reinventions, and signature use of the falsetto register. - Wikipedia"
     }
   ]
 
-module.exports = authorInventory;
+module.exports = artistData;
