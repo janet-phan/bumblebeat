@@ -1,11 +1,14 @@
 require("dotenv").config(); 
 require("./config/connection"); 
 require("./config/authStrategy"); 
+//packages
 const express = require("express");
+//middleware
 const morgan = require("morgan");
-const path = require("path");
+const path = require("node:path");
+//init the app & port
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const cors = require("cors"); 
 const helmet = require("helmet"); 
 const session = require("express-session"); 
@@ -21,7 +24,7 @@ const authRoutes = require('./routes/adminRouter');
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname + "public")));
 
 app.use(
@@ -44,6 +47,7 @@ app.use(artistRoutes);
 app.use(siteRoutes); 
 app.use(authRoutes); 
 
+//server
 app.listen(PORT, () => {
   console.log(`Bumblebeat's server is currently listening on port ${PORT}`);
   console.log(`http://localhost:${PORT}/`)

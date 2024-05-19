@@ -24,10 +24,17 @@ const register = async (request, response, next) => {
                 });
             });
         } catch (error) {
-            response.status(400).json({
-                error: { message: "Username already exists" },
-                statusCode: 400,
-            });
+            if (error.code === 11000 && error.keyPattern.username) {
+                response.status(400).json({
+                  error: { message: "Username already exists" },
+                  statusCode: 400,
+                });
+            } else {
+                response.status(400).json({
+                  error: { message: "Something went wrong while signing up!" },
+                  statusCode: 400,
+                });
+            }
         }
     });
     response.status(500).json({
