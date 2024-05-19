@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 const songRoutes = require('./routes/songRouter');
 const artistRoutes = require('./routes/artistRouter');
 const siteRoutes = require('./routes/siteRouter'); 
-const authRoutes = require('./routes/authRouter');
+const authRoutes = require('./routes/adminRouter');
 
 app.use(cors());
 app.use(helmet());
