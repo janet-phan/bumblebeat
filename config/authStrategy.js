@@ -40,7 +40,7 @@ passport.use(
 passport.use(new GithubStrategy({ //container to use the strategy
     clientID: process.env.GITHUB_CLIENT_ID, 
     clientSecret: process.env.GITHUB_CLIENT_SECRET, 
-    callbackURL: 'http://localhost:3000/auth/github'
+    callbackURL: 'https://bumblebeat.onrender.com'
 }, 
     (accessToken, refreshToken, profile, done) => { 
     console.log(profile); 
@@ -52,7 +52,7 @@ passport.use(new GithubStrategy({ //container to use the strategy
 passport.use(new GoogleStrategy({ 
     clientID: process.env.GOOGLE_CLIENT_ID, 
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/auth/google'
+    callbackURL: 'https://bumblebeat.onrender.com/auth/google'
     },
     (accessToken, refreshToken, profile, done) => { 
         console.log(profile); 
