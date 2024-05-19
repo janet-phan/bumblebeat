@@ -1,14 +1,12 @@
-[
-{"title": "Blinding Lights", "artist": "The Weekend", "album": "After Hours", "year": 2020, "time": "3:20"},
-{"title": "Just the Way You Are", "artist": "Bruno Mars", "album": "Doo-Wops & Hooligans", "year": 2010, "time": "3:40"},
-{"title": "Cruel Summer", "artist": "Taylor Swift", "album": "Lover", "year": 2019, "time": "2:58"},
-{"title": "Lover", "artist": "Taylor Swift", "album": "Lover", "year": 2019, "time": "2:48"},
-{"title": "Welcome to New York", "artist": "Taylor Swift", "album": "Lover", "year": 2023, "time": "3:20"},
-{"title": "You Need to Calm Down", "artist": "Taylor Swift", "album": "Lover", "year": 2019, "time": "2:48"},
-{"title": "Blank Space", "artist": "Taylor Swift", "album": "Lover", "year": 2023, "time": "2:48"},
-{"title": "How You Get the Girl", "artist": "Taylor Swift", "album": "Lover", "year": 2023,  "time": "2:48"},
-{"title": "On the Way Down", "artist": "Ryan Cabrera", "album": "Take it All Away", "year": 2004,  "time": "2:48"},
-{"title": "Clean", "artist": "Taylor Swift", "album": "Lover", "year": 2023, "time": "4:31"},
-{"title": "Mandy", "artist": "Jonas Brothers", "album": "It's About Time", "year": 2006, "time": "2:48"},
-{"title": "Year 3000", "artist": "Jonas Brothers", "album": "It's About Time", "year": 2006, "time": "3:21"}
-]
+[{"title": "Blinding Lights", "artistName": "The Weekend", "album": "After Hours", "year": 2020, "time": "3:20"},
+{"title": "Just the Way You Are", "artistName": "Bruno Mars", "album": "Doo-Wops & Hooligans", "year": 2010, "time": "3:40"},
+{"title": "Cruel Summer", "artistName": "Taylor Swift", "album": "Lover", "year": 2019, "time": "2:58"},
+{"title": "Lover", "artistName": "Taylor Swift", "album": "Lover", "year": 2019, "time": "2:48"},
+{"title": "Welcome to New York", "artistName": "Taylor Swift", "album": "Lover", "year": 2023, "time": "3:20"},
+{"title": "You Need to Calm Down", "artistName": "Taylor Swift", "album": "Lover", "year": 2019, "time": "2:48"},
+{"title": "Blank Space", "artistName": "Taylor Swift", "album": "Lover", "year": 2023, "time": "2:48"},
+{"title": "How You Get the Girl", "artistName": "Taylor Swift", "album": "Lover", "year": 2023,  "time": "2:48"},
+{"title": "On the Way Down", "artistName": "Ryan Cabrera", "album": "Take it All Away", "year": 2004,  "time": "2:48"},
+{"title": "Clean", "artistName": "Taylor Swift", "album": "Lover", "year": 2023, "time": "4:31"},
+{"title": "Mandy", "artistName": "Jonas Brothers", "album": "It's About Time", "year": 2006, "time": "2:48"},
+{"title": "Year 3000", "artistName": "Jonas Brothers", "album": "It's About Time", "year": 2006, "time": "3:21"}]

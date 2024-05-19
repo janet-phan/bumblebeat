@@ -13,7 +13,7 @@ const getAllSongs = async (request, response, next) => {
 };
 
 //read a song by the ID
-const getSongs = async (request, response, next) => {
+const getSong = async (request, response, next) => {
   const { _id } = request.params;
 
     await Song.findOne({ _id: _id }).then((song) => {
@@ -26,4 +26,4 @@ const getSongs = async (request, response, next) => {
   ) 
 };
 
-module.exports = { getAllSongs, getSongs };
+module.exports = { getAllSongs, getSong };

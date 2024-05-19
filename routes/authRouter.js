@@ -4,9 +4,10 @@ const router = express.Router();
 
 
 
-const {createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist} = require("../controllers/adminController");
+const { createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist } = require("../controllers/adminController");
 
-const {register} = require("../controllers/authController")
+const { register } = require("../controllers/authController");
+
 
 const checkAuthentication = (request, response, next) => {
     if (request.isAuthenticated()) {
@@ -18,29 +19,26 @@ const checkAuthentication = (request, response, next) => {
 
 router.get("/admin", checkAuthentication, (request, response, next) => {
     try {
-        router.get("/auth", (request, response, next) => {
-            response.json("Authenticated");
-        });
+        response.json("Authenticated");
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.post("/music/create-song", createSong);
+router.put("/music/:_id/edit", editSong);
+router.delete("/music/songs/:_id/delete", deleteSong);
+
+    router.post("/music/artists", createArtist);
+    router.put("/music/artists/:_id/edit", editArtist);
+    router.delete("/music/artists/:_id/delete", deleteArtist);
     
-    router.post("../music/create-song", createSong);
-    router.put("../music/:_id/edit", editSong);
-    router.delete("/music/:_id/delete", deleteSong);
-
-    router.post("../music/artists", createArtist);
-    router.put("../music/artists/:_id/edit", editArtist);
-    router.delete("../music/artists:_id/delete", deleteArtist);
-} catch (error) {
-    console.log(error)
-}
-});
-
-
-router.get("/unauthenticated", (request, response, next) => {
-    response.redirect("/");
-});
-
-router.post("../register", register);
-
+    router.get("/unauthenticated", (request, response, next) => {
+        response.redirect("/");
+    });
+    
+    router.post("/register", register);
+    
 //implement Google Strategy
 
 //GET to the path of /login/google with passport authentication of the google route and providing a scope object of an array with a string of profile
@@ -68,7 +66,8 @@ router.get('/login/google/failed', (req, res) => {
     failureRedirect: '/login/local/failed'
   }));
 
-router.get('/logout', authController.logoutRequest);
+const authController = require('../controllers/authController');
+router.get('/logout', authController.logout);
 
 router.post('/register', authController.register);
 

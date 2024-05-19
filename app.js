@@ -13,16 +13,16 @@ const passport = require("passport");
 
 app.use(morgan("dev"));
 
-const songRoutes = require('/routes/songRouter');
-const artistRoutes = require('/routes/artistRouter');
-const siteRoutes = require('/routes/siteRouter'); 
-const authRoutes = require('/routes/authRouter'); 
+const songRoutes = require('./routes/songRouter');
+const artistRoutes = require('./routes/artistRouter');
+const siteRoutes = require('./routes/siteRouter'); 
+const authRoutes = require('./routes/authRouter');
 
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname + "/public")));
+app.use(express.static(path.join(__dirname + "public")));
 
 app.use(
   session({
@@ -40,7 +40,7 @@ app.get("/", (request, response, next) => {
 });
 
 app.use(songRoutes);
-app.use(artistRoutesRoutes);
+app.use(artistRoutes);
 app.use(siteRoutes); 
 app.use(authRoutes); 
 

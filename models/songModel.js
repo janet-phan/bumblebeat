@@ -7,7 +7,7 @@ const songSchema = new Schema({
     type: String,
     required: [true, "A song title is required"],
   },
-  artist: {
+  artistName: {
     type: String,
     required: [true, "The artist's name is required"],
   },
@@ -20,6 +20,10 @@ const songSchema = new Schema({
     required: [true, "The album year is required"],
     min: [1930, "Minimum year is 1930"],
     max: [2024, "Maximum year is 2024"],
+  },
+  time: {
+    type: String,
+    required: true,
   }
 });
 
