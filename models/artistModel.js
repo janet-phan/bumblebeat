@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const artistSchema = new Schema({
+  _id: { 
+    type: String, 
+    required: true },
   artistName: {
     type: String,
     required: [true, "An artist name or band name is required"],

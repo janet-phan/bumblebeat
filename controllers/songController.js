@@ -1,5 +1,6 @@
 const siteData = require('../data/siteData');
 const Song = require("../models/songModel");
+// const songData = require("../data/songData")
 
 //read all songs
 const getAllSongs = async (request, response, next) => {

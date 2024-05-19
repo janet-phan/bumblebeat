@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const songSchema = new Schema({
+  _id: { 
+    type: String, 
+    required: true,
+  },
   title: {
     type: String,
     required: [true, "A song title is required"],
