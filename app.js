@@ -44,7 +44,6 @@ app.use(passport.session());
 
 app.get("/", (request, response, next) => {
     const filePath = path.join(__dirname, 'index.html');
-    response.sendFile(filePath);
   });
 
 app.use(songRoutes);
