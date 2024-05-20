@@ -156,7 +156,7 @@ app.get("/", (request, response, next) => {
         background-color: var(--yellow);
         box-shadow: 0 0 10px var(--yellow);
         position: absolute;
-        background-image: url('./public/images/taylor_swift.webp');
+        background-image: url('../images/taylor_swift.webp');
         background-size: cover;
     }
     
@@ -416,7 +416,7 @@ app.get("/", (request, response, next) => {
           <a href="register.html">Register</a>
         </div>
         <div class="footer">Site Links 2</div>
-        <div class="footer"><img src="public/images/bumblebeat-logo.png"></div>
+        <div class="footer"><img src="./public/images/bumblebeat-logo.png"></div>
       </footer>
     </body>
     </html>
