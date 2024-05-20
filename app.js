@@ -157,6 +157,8 @@ app.get("/", (request, response, next) => {
         background-color: var(--yellow);
         box-shadow: 0 0 10px var(--yellow);
         position: absolute;
+        background-image: url('./public/images/taylor_swift.webp');
+        background-size: cover;
     }
     
     .current-artist {
@@ -346,9 +348,7 @@ app.get("/", (request, response, next) => {
       <main class="index-main">
         <div class="row">
           <div class="column1">
-            <div class="currently-playing" style="
-            background-image: url('./public/images/taylor_swift.webp');
-            background-size: cover;">
+            <div class="currently-playing">
             </div>
             <div class="progress">
               <div class="barOverflow">
