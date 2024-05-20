@@ -34,6 +34,7 @@ body {
 
 body a {
     color: var(--white);
+    text-decoration: none;
 }
 
 nav ul {
@@ -141,7 +142,7 @@ i {
     transform: rotate(180deg);
     position: relative;
     margin-top: 10em;
-    margin-left: 7.75em;
+    padding-left: 25em;
   }
   .barOverflow{ /* Wraps the rotating .bar */
     position: relative;
@@ -488,11 +489,19 @@ i {
     margin: auto;
   }
 
-  .artist-name {
-    width: 45%;
-    margin: auto;
+  .artist-bio {
+    width: 50%;
+    padding: 3em 4em;
   }
 
-  .artist-album {
-    flex-basis: 100%;
+  .artist-name {
+    width: 45%;
+    font-size: 4em;
+    line-height: 4em;
+    text-align: center;
+  }
+
+  .artist-albums {
+    width: 30%;
+    padding-bottom: 4em;
   }

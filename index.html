@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BumbleBeat</title>
-    <link rel="stylesheet" href="/public/styles/style.css" />
+    <link rel="stylesheet" href="./public/styles/style.css" />
     <script
       src="https://kit.fontawesome.com/012a2bcae9.js"
       crossorigin="anonymous"
@@ -23,10 +23,10 @@
           <input type="text" placeholder="Search..">
         </li>
         <li>
-          <a href="playlists/">Playlists</a>
+          <a href="./playlists/index.html">Playlists</a>
         </li>
         <li>
-          <a href="music/">Music</a>
+          <a href="./music/index.html">Music</a>
         </li>
         <li>
           <a href="settings.html">Account Settings</a>
@@ -40,13 +40,10 @@
     <main class="index-main">
       <div class="row">
         <div class="column1">
-          <div
-            class="currently-playing"
-            style="
-              background-image: url(public/images/pexels-spring-toan-3704041.jpg);
-              background-size: cover;
-            "
-          ></div>
+          <div class="currently-playing" style="
+          background-image: url('./public/images/taylor_swift.webp');
+          background-size: cover;">
+          </div>
           <div class="progress">
             <div class="barOverflow">
               <div class="bar"></div>
@@ -59,13 +56,13 @@
         </div>
         <div class="column2">
           <div class="current-artist">
-            <h1>Wendy Wu<i class="fa-solid fa-user-plus"></i></h1>
+            <h1>Taylor Swift<i class="fa-solid fa-user-plus"></i></h1>
           </div>
           <div class="current-title">
-            <h2>Next to You</h2>
+            <a href="./music/albums/speak-now.html"><h2>Speak Now</h2></a>
           </div>
           <div class="playing-song-title">
-            Elevator
+            <a href="./music/albums/speak-now.html#long-live">Long Live</a>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-download"></i>
           </div>
