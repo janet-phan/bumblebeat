@@ -42,8 +42,11 @@ app.use(passport.session());
 //   response.status(200).json({success: {message: "This route points to the Home page"}, statusCode: 200});
 // });
 
-app.get('/', (req, res) => {
-  const html = `
+app.get("/", (request, response, next) => {
+  //response.status(200).json({success: {message: "This route points to the Home page"}, statusCode: 200});
+  //Add response.send with the template literal
+  response.send(
+    `
   <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -53,8 +56,7 @@ app.get('/', (req, res) => {
       <link rel="stylesheet" href="./public/styles/style.css" />
       <script
         src="https://kit.fontawesome.com/012a2bcae9.js"
-        crossorigin="anonymous"
-      ></script>
+        crossorigin="anonymous"></script>
       <style>
         @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
       </style>
@@ -161,11 +163,9 @@ app.get('/', (req, res) => {
         <div class="footer"><img src="public/images/bumblebeat-logo.png"></div>
       </footer>
     </body>
-  </html>
-  `
-  ;
-
-  res.send(html);
+    </html>
+    `
+  )
 });
 
 
