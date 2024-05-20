@@ -44,16 +44,17 @@ app.use(passport.session());
 
 app.get('/', (req, res) => {
   const html = `
-    <!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>BumbleBeat</title>
-      <link rel="stylesheet" href="/public/styles/style.css" />
+      <link rel="stylesheet" href="./public/styles/style.css" />
       <script
         src="https://kit.fontawesome.com/012a2bcae9.js"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"
+      ></script>
       <style>
         @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
       </style>
@@ -68,10 +69,10 @@ app.get('/', (req, res) => {
             <input type="text" placeholder="Search..">
           </li>
           <li>
-            <a href="playlists/">Playlists</a>
+            <a href="./playlists/index.html">Playlists</a>
           </li>
           <li>
-            <a href="music/">Music</a>
+            <a href="./music/index.html">Music</a>
           </li>
           <li>
             <a href="settings.html">Account Settings</a>
@@ -85,10 +86,10 @@ app.get('/', (req, res) => {
       <main class="index-main">
         <div class="row">
           <div class="column1">
-            <div
-              class="currently-playing"
-              style="background-image: url(public/images/pexels-spring-toan-3704041.jpg);
-                background-size: cover;"></div>
+            <div class="currently-playing" style="
+            background-image: url('./public/images/taylor_swift.webp');
+            background-size: cover;">
+            </div>
             <div class="progress">
               <div class="barOverflow">
                 <div class="bar"></div>
@@ -101,13 +102,13 @@ app.get('/', (req, res) => {
           </div>
           <div class="column2">
             <div class="current-artist">
-              <h1>Wendy Wu<i class="fa-solid fa-user-plus"></i></h1>
+              <h1>Taylor Swift<i class="fa-solid fa-user-plus"></i></h1>
             </div>
             <div class="current-title">
-              <h2>Next to You</h2>
+              <a href="./music/albums/speak-now.html"><h2>Speak Now</h2></a>
             </div>
             <div class="playing-song-title">
-              Elevator
+              <a href="./music/albums/speak-now.html#long-live">Long Live</a>
               <i class="fa-regular fa-heart"></i>
               <i class="fa-solid fa-download"></i>
             </div>
@@ -160,7 +161,8 @@ app.get('/', (req, res) => {
         <div class="footer"><img src="public/images/bumblebeat-logo.png"></div>
       </footer>
     </body>
-    </html>`
+  </html>
+  `
   ;
 
   res.send(html);
