@@ -1,6 +1,5 @@
 const songData = [
     {
-      _id: "001",
       title: "Blinding Lights",
       author: "The Weekend",
       album: "After Hours",
@@ -9,7 +8,6 @@ const songData = [
       time: "3:20",
     },
     {
-      _id: "002",
       title: "Just the Way You Are",
       author: "Bruno Mars",
       album: "Doo-Wops & Hooligans",
@@ -18,7 +16,6 @@ const songData = [
       time: "3:40",
     },
     {
-      _id: "003",
       title: "Cruel Summer",
       author: "Taylor Swift",
       album: "Lover",
