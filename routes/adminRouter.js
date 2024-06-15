@@ -15,11 +15,11 @@ const {
   createUser,
   login,
   viewProfile,
-  logout
+  logout,
 } = require("../controllers/adminController");
 
-const { getAllArtists, getArtist } = require("../controllers/artistController")
-const { getAllSongs, getSong } = require("../controllers/songController")
+const { getAllArtists, getArtist } = require("../controllers/artistController");
+const { getAllSongs, getSong } = require("../controllers/songController");
 
 const checkAuthentication = (request, response, next) => {
   if (request.isAuthenticated()) {
@@ -42,15 +42,14 @@ router.post("/login", passport.authenticate("local"), login);
 router.get("/profile", viewProfile);
 router.get("/logout", logout);
 
-
-router.get("/music/songs/all", getAllSongs)
-router.get("/music/songs/:_id/", getSong)
+router.get("/music/songs/all", getAllSongs);
+router.get("/music/songs/:_id/", getSong);
 router.post("/music/create-song", createSong);
 router.put("/music/:_id/edit", editSong);
 router.delete("/music/songs/:_id/delete", deleteSong);
 
-router.get("/music/artists", getAllArtists)
-router.get("/music/artists/_id:/view", getArtist)
+router.get("/music/artists", getAllArtists);
+router.get("/music/artists/_id:/view", getArtist);
 router.post("/music/createartists", createArtist);
 router.put("/music/artists/:_id/edit", editArtist);
 router.delete("/music/artists/:_id/delete", deleteArtist);
