@@ -2,14 +2,18 @@ const siteData = require('../data/siteData');
 const Artist = require('../models/artistModel');
 
 const getAllArtists = async (request, response, next) => { 
-    await Artist.find({}).then((artists) =>
+  try {
+    const artists = await Artist.find({});
     response.status(200).json({
       success: { message: "This route points to the Artist page with all of the artists" },
-      data: artists, siteData,
+      data: artists,
       statusCode: 200,
-    })
-   )
-}
+    });
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: "Internal Server Error" });
+  }
+};
 
 const getArtist = async (request, response, next) => {
   const { _id } = request.params;
