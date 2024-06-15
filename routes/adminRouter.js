@@ -19,6 +19,7 @@ const {
 } = require("../controllers/adminController");
 
 const { getAllArtists, getArtist } = require("../controllers/artistController")
+const { getAllSongs, getSong } = require("../controllers/songController")
 
 const checkAuthentication = (request, response, next) => {
   if (request.isAuthenticated()) {
@@ -42,7 +43,8 @@ router.get("/profile", viewProfile);
 router.get("/logout", logout);
 
 
-
+router.get("/music/songs/all", getAllSongs)
+router.get("/music/songs/:_id/", getSong)
 router.post("/music/create-song", createSong);
 router.put("/music/:_id/edit", editSong);
 router.delete("/music/songs/:_id/delete", deleteSong);
