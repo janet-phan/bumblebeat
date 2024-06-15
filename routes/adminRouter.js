@@ -14,8 +14,11 @@ const {
   deletePlaylist,
   createUser,
   login,
+  viewProfile,
   logout
 } = require("../controllers/adminController");
+
+const { getAllArtists, getArtist } = require("../controllers/artistController")
 
 const checkAuthentication = (request, response, next) => {
   if (request.isAuthenticated()) {
@@ -35,6 +38,7 @@ router.get("/admin", checkAuthentication, (request, response, next) => {
 
 router.post("/register", createUser);
 router.post("/login", passport.authenticate("local"), login);
+router.get("/profile", viewProfile);
 router.get("/logout", logout);
 
 
@@ -43,7 +47,9 @@ router.post("/music/create-song", createSong);
 router.put("/music/:_id/edit", editSong);
 router.delete("/music/songs/:_id/delete", deleteSong);
 
-router.post("/music/artists", createArtist);
+router.get("/music/artists", getAllArtists)
+router.get("/music/artists/_id:/view", getArtist)
+router.post("/music/createartists", createArtist);
 router.put("/music/artists/:_id/edit", editArtist);
 router.delete("/music/artists/:_id/delete", deleteArtist);
 

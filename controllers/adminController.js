@@ -229,10 +229,25 @@ const login = (request, response, next) => {
     }
 }
 
+const viewProfile = (request, response, next) => {
+    try {
+
+      const userDetails = {
+        id: request.user.id,
+        username: request.user.username,
+        email: request.user.email
+      };
+  
+      response.json({ message: "Viewing user profile", user: userDetails });
+    } catch (error) {
+      next(error);
+    }
+  };
+
 const logout = (request, response) => {
     request.logout();
     response.status(200).json({ message: "Logout successful" });
 }
 
 
-module.exports = {createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist, createPlaylist, editPlaylist, deletePlaylist, createUser, login, logout};
+module.exports = {createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist, createPlaylist, editPlaylist, deletePlaylist, createUser, login, viewProfile, logout};
