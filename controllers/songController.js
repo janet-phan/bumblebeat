@@ -4,13 +4,17 @@ const Song = require("../models/songModel");
 
 //read all songs
 const getAllSongs = async (request, response, next) => {
-    await Song.find({}).then((songs) =>
+  try {
+    const songs = await Song.find({});
     response.status(200).json({
       success: { message: "This route points to the Music page with all of the songs" },
-      data: songs, siteData,
+      data: songs,
       statusCode: 200,
-    })
-    )
+    });
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: "Internal Server Error" });
+  }
 };
 
 //read a song by the ID
