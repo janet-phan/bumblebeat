@@ -2,10 +2,10 @@ const siteData = require('../data/siteData');
 const Artist = require('../models/artistModel');
 
 const getAllArtists = async (request, response, next) => { 
-    await Artist.find({}).then((authors) =>
+    await Artist.find({}).then((artists) =>
     response.status(200).json({
       success: { message: "This route points to the Artist page with all of the artists" },
-      data: authors, siteData,
+      data: artists, siteData,
       statusCode: 200,
     })
    )
