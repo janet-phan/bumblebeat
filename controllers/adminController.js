@@ -135,4 +135,99 @@ const deleteArtist = async (request, response, next) => {
     }
 }
 
-module.exports = {createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist};
+const createPlaylist = async (request, response, next) => {
+    const { playlistName, title, artist, album, duration } = request.body;
+
+    const newPlaylist = new Playlist({
+        playlistName: String,
+        songs: [
+          {
+            title: String,
+            artist: String,
+            album: String,
+            duration: Number
+          }
+        ]
+      });
+
+    try {
+        await newPlaylist.save(); 
+        response
+        .status(201)
+        .json({ success: "A new playlist has been created", data: newPlaylist, statusCode: 201 });
+    } catch (error) {
+        response
+        .status(400)
+        .json({ error: "Something happened while creating a playlist", data: newPlaylist, statusCode: 400 });
+    }
+}
+
+
+const editPlaylist = async (request, response, next) => {
+    const { _id } = request.params;
+
+    const { playlistName, title, artist, album, duration } = request.body;
+
+    const updatedPlaylist = {
+        playlistName: String,
+        songs: [
+          {
+            title: String,
+            artist: String,
+            album: String,
+            duration: Number
+          }
+        ]
+      };
+
+    await Playlist.findByIdAndUpdate({ _id: _id }, updatedPlaylist);
+
+    try {
+        response.status(200).json({
+            success: `The playlist with id ${_id} is updated successfully`,
+            data: updatedPlaylist,
+            statusCode: 200,
+          });
+    } catch (error) {
+        response
+        .status(400)
+        .json({ error: "Something happened while editing the playlist", statusCode: 400 });
+    }
+}
+
+
+const deletePlaylist = async (request, response, next) => {
+    const { _id } = request.params;
+    await Playlist.findByIdAndDelete({ _id: _id });
+
+    try {
+        response.status(200).json({
+            success: `The playlist with id ${_id} is deleted successfully`,
+            statusCode: 200,
+          });
+    } catch (error) {
+        response
+        .status(400)
+        .json({ error: "Something happened while deleting the playlist", statusCode: 400 });
+    }
+}
+
+const createUser = (request, response, next) => {
+    const { username, email, password } = request.body;
+}
+
+const login = (request, response, next) => {
+    try {
+        response.status(200).json({
+            success: `You're logged in!`,
+            statusCode: 200,
+          });
+    } catch (error) {
+        response
+        .status(400)
+        .json({ error: "Failed logging in :(", statusCode: 400 });
+    }
+}
+
+
+module.exports = {createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist, createPlaylist, editPlaylist, deletePlaylist, createUser, login};

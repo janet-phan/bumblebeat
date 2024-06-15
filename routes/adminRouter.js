@@ -9,6 +9,11 @@ const {
   createArtist,
   editArtist,
   deleteArtist,
+  createPlaylist,
+  editPlaylist,
+  deletePlaylist,
+  createUser,
+  login
 } = require("../controllers/adminController");
 
 const checkAuthentication = (request, response, next) => {
@@ -27,6 +32,10 @@ router.get("/admin", checkAuthentication, (request, response, next) => {
   }
 });
 
+router.post("/register", createUser);
+router.post("/login", passport.authenticate("local"), login);
+
+
 router.post("/music/create-song", createSong);
 router.put("/music/:_id/edit", editSong);
 router.delete("/music/songs/:_id/delete", deleteSong);
@@ -34,6 +43,10 @@ router.delete("/music/songs/:_id/delete", deleteSong);
 router.post("/music/artists", createArtist);
 router.put("/music/artists/:_id/edit", editArtist);
 router.delete("/music/artists/:_id/delete", deleteArtist);
+
+router.post("/playlist/create-playlist", createPlaylist);
+router.put("/playlist/:_id/edit", editPlaylist);
+router.delete("/playlist/:_id/delete", deletePlaylist);
 
 router.get("/unauthenticated", (request, response, next) => {
   response.redirect("/");
