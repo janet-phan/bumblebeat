@@ -229,5 +229,10 @@ const login = (request, response, next) => {
     }
 }
 
+const logout = (request, response) => {
+    request.logout();
+    response.status(200).json({ message: "Logout successful" });
+}
 
-module.exports = {createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist, createPlaylist, editPlaylist, deletePlaylist, createUser, login};
+
+module.exports = {createSong, editSong, deleteSong, createArtist, editArtist, deleteArtist, createPlaylist, editPlaylist, deletePlaylist, createUser, login, logout};

@@ -13,7 +13,8 @@ const {
   editPlaylist,
   deletePlaylist,
   createUser,
-  login
+  login,
+  logout
 } = require("../controllers/adminController");
 
 const checkAuthentication = (request, response, next) => {
@@ -34,6 +35,8 @@ router.get("/admin", checkAuthentication, (request, response, next) => {
 
 router.post("/register", createUser);
 router.post("/login", passport.authenticate("local"), login);
+router.get("/logout", logout);
+
 
 
 router.post("/music/create-song", createSong);
