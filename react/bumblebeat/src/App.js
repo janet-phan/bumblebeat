@@ -1,6 +1,6 @@
 require("dotenv").config();
-require("./react/bumblebeat/src/config/connection");
-require("./react/bumblebeat/src/config/authStrategy");
+require("./config/connection");
+require("./config/authStrategy");
 //packages
 const express = require("express");
 //middleware
@@ -16,10 +16,10 @@ const passport = require("passport");
 
 app.use(morgan("dev"));
 
-const songRoutes = require("./react/bumblebeat/src/routes/songRouter");
-const artistRoutes = require("./react/bumblebeat/src/routes/artistRouter");
-const siteRoutes = require("./react/bumblebeat/src/routes/siteRouter");
-const authRoutes = require("./react/bumblebeat/src/routes/adminRouter");
+const songRoutes = require("./src/routes/songRouter");
+const artistRoutes = require("./src/routes/artistRouter");
+const siteRoutes = require(".src/routes/siteRouter");
+const authRoutes = require("./src/routes/adminRouter");
 
 app.use(cors());
 app.use(helmet());
