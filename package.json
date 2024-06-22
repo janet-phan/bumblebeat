@@ -1,7 +1,7 @@
 {
   "name": "bumblebeat",
   "version": "1.0.0",
-  "description": "Personal Project to work on while in CodeSquad dev bootcamp!",
+  "description": "Bumblebeat is an app for everyone to discover new music or push your own music!",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

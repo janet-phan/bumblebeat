@@ -1,6 +1,6 @@
 require("dotenv").config();
-require("./config/connection");
-require("./config/authStrategy");
+require("./react/bumblebeat/src/config/connection");
+require("./react/bumblebeat/src/config/authStrategy");
 //packages
 const express = require("express");
 //middleware
