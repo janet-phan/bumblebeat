@@ -44,21 +44,16 @@ router.get("/admin", checkAuthentication, (request, response, next) => {
 
 router.get("/logout", logout);
 
-router.get("/music/songs/all", getAllSongs);
-router.get("/music/songs/:_id/", getSong);
 router.post("/music/create-song", createSong);
 router.put("/music/:_id/edit", editSong);
 router.delete("/music/songs/:_id/delete", deleteSong);
 
-router.get("/music/artists", getAllArtists);
-router.get("/music/artists/_id:/view", getArtist);
+
+
 router.post("/music/createartists", createArtist);
 router.put("/music/artists/:_id/edit", editArtist);
 router.delete("/music/artists/:_id/delete", deleteArtist);
 
-router.post("/playlist/create-playlist", createPlaylist);
-router.put("/playlist/:_id/edit", editPlaylist);
-router.delete("/playlist/:_id/delete", deletePlaylist);
 
 router.get("/unauthenticated", (request, response, next) => {
   response.redirect("/");
