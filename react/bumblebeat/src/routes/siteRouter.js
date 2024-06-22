@@ -3,9 +3,9 @@ const passport = require("passport");
 
 const router = express.Router();
 
-const { register, login, logout } = require("../controllers/authController");
+router.post("/register", createUser);
 
-router.post("/register", register);
+router.get("/login", userLogin);
 
 router.post(
   "/login",
@@ -20,7 +20,8 @@ router.get("/login/error", (request, response, next) => {
   response.json("Login error");
 });
 
-router.get("/logout", logout);
+router.get("/profile", viewProfile);
+
 
 //implement Google Strategy
 
@@ -58,10 +59,10 @@ router.get(
   })
 );
 
-const authController = require("../controllers/authController");
-router.get("/logout", authController.logout);
 
-router.post("/register", authController.register);
+
+router.get("/logout", userLogout);
+
 
 // github strategy
 //Direction: we'll need to implement three different routes here to get our GitHub Strategy.

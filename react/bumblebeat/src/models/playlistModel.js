@@ -10,7 +10,7 @@ const playlistSchema = new Schema({
         title: String,
         artist: String,
         album: String,
-        duration: Number
+        time: Number
       }
     ]
   });

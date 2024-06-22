@@ -45,18 +45,20 @@ const register = async (request, response, next) => {
 };
 
 
-const login = async (request, response, next) => {
-    console.log(request.user);
-    response.status(200).json({
-        success: { message: "User logged in." },
-        data: {
-            username: request.user.username,
-        }, 
+const adminLogin = (request, response, next) => {
+    try {
+      response.status(200).json({
+        success: `You're logged in as admin!`,
         statusCode: 200,
-    });
-};
-
-const logout = async (request, response, next) => {
+      });
+    } catch (error) {
+      response
+        .status(400)
+        .json({ error: "Failed logging in as admin :(", statusCode: 400 });
+    }
+  };
+  
+const adminLogout = async (request, response, next) => {
     request.logout((error) => {
         if (error) {
             response.status(400).json({
@@ -78,4 +80,15 @@ const loginLocalFailed = (req, res, next) => {
     });
 };
 
-module.exports = { loginLocalFailed, register, login, logout };
+
+  
+const newSong = new Song({
+    title: title,
+    artist: artist,
+    album: album,
+    time: time,
+});
+
+    
+
+module.exports = { loginLocalFailed, register, adminLogin, adminLogout, editArtist, deleteArtist, newSong };

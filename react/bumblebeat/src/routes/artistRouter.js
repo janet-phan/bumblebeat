@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllArtists, getArtist, editArtist, deleteArtist } = require("../../../../controllers/artistController");
+const { getAllArtists, getArtist, editArtist, deleteArtist } = require("../controllers/artistController");
 
 router.get("/artists", getAllArtists);
 router.get("/artists/:_id", getArtist);

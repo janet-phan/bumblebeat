@@ -23,8 +23,8 @@ const {
   editPlaylist,
 } = require("../controllers/playlistController");
 
-const { getAllArtists, getArtist } = require("../../../../controllers/artistController");
-const { getAllSongs, getSong } = require("../../../../controllers/songController");
+const { getAllArtists, getArtist } = require("../controllers/artistController");
+const { getAllSongs, getSong } = require("../controllers/songController");
 
 const checkAuthentication = (request, response, next) => {
   if (request.isAuthenticated()) {
