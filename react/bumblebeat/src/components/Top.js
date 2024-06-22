@@ -93,7 +93,7 @@ const Top = () => {
         <div className="row">
           <div className="now-playing-song"></div>
           <div className="soundwave">
-            <img src="/public/images/yellow-soundwave.gif" />
+            <img src="..//images/yellow-soundwave.gif" />
           </div>
         </div>
 

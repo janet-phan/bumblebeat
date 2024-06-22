@@ -22,7 +22,7 @@ const Footer = () => {
       </div>
       <div class="footer">Site Links 2</div>
       <div class="footer">
-        <img src="public/images/bumblebeat-logo.png" />
+        <a href="/"><img src="../images/bumblebeat-logo.png" /></a>
       </div>
     </footer>
   );
