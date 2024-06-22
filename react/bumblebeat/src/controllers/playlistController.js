@@ -101,5 +101,23 @@ const editPlaylist = async (request, response, next) => {
   }
 };
   
+const deletePlaylist = async (request, response, next) => {
+  const { _id } = request.params;
 
-module.exports = { getAllPlaylist, getPlaylist, createPlaylist, editPlaylist };
+  try {
+    const deletedPlaylist = await Playlist.findByIdAndDelete(_id);
+  
+    response.status(200).json({
+      success: `The playlist with id ${_id} is deleted successfully`,
+      data: updatedPlaylist,
+      statusCode: 200,
+    });
+  } catch (error) {
+    response.status(400).json({
+      error: "Something happened while deleting the playlist",
+      statusCode: 400,
+    });
+  }
+};
+
+module.exports = { getAllPlaylist, getPlaylist, createPlaylist, editPlaylist,  deletePlaylist };
