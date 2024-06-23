@@ -24,11 +24,11 @@ const userSchema = new Schema({
         type: String,
     },
     password: {
-        type: Buffer
+        type: String,
+        required: true,
     },
     strategy: {
         type: String,
-        required: true,
     },
     googleId: {
         type: String,
