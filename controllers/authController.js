@@ -15,14 +15,21 @@ const register = async (request, response, next) => {
       password: hashedPassword,
       googleId: "", // added
     });
+    console.log(newUser);
 
     await newUser.save();
     request.login(newUser, (err) => {
-      response.status(201).json({
-        success: { message: "New user is created" },
-        data: { firstName, lastName, username, email, role },
-        statusCode: 201,
-      });
+      if (err) {
+        return response.status(400).json({
+          error: { message: "Something went wrong logging in" },
+          statusCode: 400,
+        });
+      }
+    });
+    return response.status(201).json({
+      success: { message: "New user is created" },
+      data: { firstName, lastName, username, email, role },
+      statusCode: 201,
     });
   } catch (error) {
     if (error.code === 11000 && error.keyPattern.username) {
