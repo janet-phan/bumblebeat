@@ -10,31 +10,51 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const User = require("../models/userModel");
 
-passport.use(
-    new LocalStrategy(
-        (verify = (username, password, done) => {
-        User.findOne({ username: username })
-        .then((user) => {
+// passport.use(
+//     new LocalStrategy(
+//         (verify = (username, password, done) => {
+//         User.findOne({ username: username })
+//         .then((user) => {
 
-            //user not validated
-            if (!user) {
-            return done(null, false, { message: "User not found" });
-            }
-            // user validated, compare to hashed/salted
-            bcrypt.compare(password, user.password, (error, result) => {
+//             //user not validated
+//             if (!user) {
+//             return done(null, false, { message: "User not found" });
+//             }
+//             // user validated, compare to hashed/salted
+//             bcrypt.compare(password, user.password, (error, result) => {
             
-            if (error) {
-                return done(error);
-            }
-            return done(null, user);
-            });
-        })
-        .catch((error) => {
-            console.log(`There was an error finding user from the database: ${error}`);
-        });
-        })
-    )
-);
+//             if (error) {
+//                 return done(error);
+//             }
+//             return done(null, user);
+//             });
+//         })
+//         .catch((error) => {
+//             console.log(`There was an error finding user from the database: ${error}`);
+//         });
+//         })
+//     )
+// );
+
+passport.use(
+    new LocalStrategy(async (username, password, done) => {
+      try {
+        const user = await User.findOne({ username });
+        if (!user) {
+          return done(null, false, { message: "Incorrect email or password." });
+        }
+  
+        const result = await bcrypt.compare(password, user.password);
+        if (!result) {
+          return done(null, false, { message: "Incorrect email or password." });
+        }
+  
+        return done(null, user);
+      } catch (error) {
+        return done(error);
+      }
+    })
+  );
 
 //implement the github strategy
 passport.use(new GithubStrategy({ //container to use the strategy
