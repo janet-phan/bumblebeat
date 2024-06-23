@@ -58,11 +58,6 @@ router.get(
   })
 );
 
-const authController = require("../controllers/authController");
-router.get("/logout", authController.logout);
-
-router.post("/register", authController.register);
-
 // github strategy
 //Direction: we'll need to implement three different routes here to get our GitHub Strategy.
 //GET to the path of /login/github and a second parameter that allows passport to authenticate a string of github
@@ -84,23 +79,23 @@ router.get(
 
 // POST to path of /login/local with passport auth of locl rout, callback with a res.status.json where status & statuscodes are 200 - json object "User logged in" data object request username, firstName, lastName
 
-router.post(
-  "/login/local",
-  passport.authenticate("local", {
-    failureRedirect: "/login/local/failed",
-  }),
-  (req, res, next) => {
-    res.status(200).json({
-      status: "success",
-      statusCodes: 200,
-      message: "User logged in",
-      data: {
-        username: req.user.username,
-        firstName: req.user.firstName,
-        lastName: req.user.lastName,
-      },
-    });
-  }
-);
+// router.post(
+//   "/login/local",
+//   passport.authenticate("local", {
+//     failureRedirect: "/login/local/failed",
+//   }),
+//   (req, res, next) => {
+//     res.status(200).json({
+//       status: "success",
+//       statusCodes: 200,
+//       message: "User logged in",
+//       data: {
+//         username: req.user.username,
+//         firstName: req.user.firstName,
+//         lastName: req.user.lastName,
+//       },
+//     });
+//   }
+// );
 
 module.exports = router;

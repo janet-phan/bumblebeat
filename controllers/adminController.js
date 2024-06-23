@@ -14,21 +14,17 @@ const createSong = async (request, response, next) => {
 
   try {
     await newSong.save();
-    response
-      .status(201)
-      .json({
-        success: "A new song has been added",
-        data: newSong,
-        statusCode: 201,
-      });
+    response.status(201).json({
+      success: "A new song has been added",
+      data: newSong,
+      statusCode: 201,
+    });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while adding a song",
-        data: newSong,
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while adding a song",
+      data: newSong,
+      statusCode: 400,
+    });
   }
 };
 
@@ -54,12 +50,10 @@ const editSong = async (request, response, next) => {
       statusCode: 200,
     });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while editing a song",
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while editing a song",
+      statusCode: 400,
+    });
   }
 };
 
@@ -74,12 +68,10 @@ const deleteSong = async (request, response, next) => {
       statusCode: 200,
     });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while deleting a song",
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while deleting a song",
+      statusCode: 400,
+    });
   }
 };
 
@@ -94,21 +86,17 @@ const createArtist = async (request, response, next) => {
 
   try {
     await newArtist.save();
-    response
-      .status(201)
-      .json({
-        success: "A new artist has been created",
-        data: newArtist,
-        statusCode: 201,
-      });
+    response.status(201).json({
+      success: "A new artist has been created",
+      data: newArtist,
+      statusCode: 201,
+    });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while creating an artist",
-        data: newArtist,
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while creating an artist",
+      data: newArtist,
+      statusCode: 400,
+    });
   }
 };
 
@@ -132,12 +120,10 @@ const editArtist = async (request, response, next) => {
       statusCode: 200,
     });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while editing an artist",
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while editing an artist",
+      statusCode: 400,
+    });
   }
 };
 
@@ -151,12 +137,10 @@ const deleteArtist = async (request, response, next) => {
       statusCode: 200,
     });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while deleting an artist",
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while deleting an artist",
+      statusCode: 400,
+    });
   }
 };
 
@@ -177,21 +161,17 @@ const createPlaylist = async (request, response, next) => {
 
   try {
     await newPlaylist.save();
-    response
-      .status(201)
-      .json({
-        success: "A new playlist has been created",
-        data: newPlaylist,
-        statusCode: 201,
-      });
+    response.status(201).json({
+      success: "A new playlist has been created",
+      data: newPlaylist,
+      statusCode: 201,
+    });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while creating a playlist",
-        data: newPlaylist,
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while creating a playlist",
+      data: newPlaylist,
+      statusCode: 400,
+    });
   }
 };
 
@@ -221,12 +201,10 @@ const editPlaylist = async (request, response, next) => {
       statusCode: 200,
     });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while editing the playlist",
-        statusCode: 400,
-      });
+    response.status(400).json({
+      error: "Something happened while editing the playlist",
+      statusCode: 400,
+    });
   }
 };
 
@@ -240,39 +218,10 @@ const deletePlaylist = async (request, response, next) => {
       statusCode: 200,
     });
   } catch (error) {
-    response
-      .status(400)
-      .json({
-        error: "Something happened while deleting the playlist",
-        statusCode: 400,
-      });
-  }
-};
-
-const createUser = async (request, response, next) => {
-  const { username, email, password } = request.body;
-
-  try {
-    response.status(201).json({
-      success: "User created successfully!",
-      statusCode: 201,
+    response.status(400).json({
+      error: "Something happened while deleting the playlist",
+      statusCode: 400,
     });
-  } catch (error) {
-    console.error(error);
-    response.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-const login = (request, response, next) => {
-  try {
-    response.status(200).json({
-      success: `You're logged in!`,
-      statusCode: 200,
-    });
-  } catch (error) {
-    response
-      .status(400)
-      .json({ error: "Failed logging in :(", statusCode: 400 });
   }
 };
 
@@ -290,11 +239,6 @@ const viewProfile = (request, response, next) => {
   }
 };
 
-const logout = (request, response) => {
-  request.logout();
-  response.status(200).json({ message: "Logout successful" });
-};
-
 module.exports = {
   createSong,
   editSong,
@@ -305,8 +249,5 @@ module.exports = {
   createPlaylist,
   editPlaylist,
   deletePlaylist,
-  createUser,
-  login,
   viewProfile,
-  logout,
 };

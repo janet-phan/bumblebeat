@@ -12,10 +12,7 @@ const {
   createPlaylist,
   editPlaylist,
   deletePlaylist,
-  createUser,
-  login,
   viewProfile,
-  logout,
 } = require("../controllers/adminController");
 
 const { getAllArtists, getArtist } = require("../controllers/artistController");
@@ -37,10 +34,7 @@ router.get("/admin", checkAuthentication, (request, response, next) => {
   }
 });
 
-router.post("/register", createUser);
-router.post("/login", passport.authenticate("local"), login);
 router.get("/profile", viewProfile);
-router.get("/logout", logout);
 
 router.get("/music/songs/all", getAllSongs);
 router.get("/music/songs/:_id/", getSong);

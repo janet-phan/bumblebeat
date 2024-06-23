@@ -16,10 +16,14 @@ const userSchema = new Schema({
         required: true,
         unique: true,
     },
-    password: {
-        type: Buffer
+    email: {
+        type: String,
+        required: true,
     },
-    salt: {
+    role: {
+        type: String,
+    },
+    password: {
         type: Buffer
     },
     strategy: {

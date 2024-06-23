@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/userModel");
 
 const register = async (request, response, next) => {
-    const { firstName, lastName, username, password } = request.body;
+    const { firstName, lastName, email, role, username, password } = request.body;
     bcrypt.hash(password, 10, async (error, hashedPassword) => {
         if (error) {
             return next(error);
@@ -10,6 +10,8 @@ const register = async (request, response, next) => {
         const newUser = new User({
             firstName,
             lastName,
+            email,
+            role,
             username,
             password: hashedPassword,
             googleId: "" // added
@@ -19,7 +21,7 @@ const register = async (request, response, next) => {
             request.login(newUser, (err) => {
                 response.status(201).json({
                     success: { message: "New user is created" },
-                    data: { firstName, lastName, username },
+                    data: { firstName, lastName, username, email, role },
                     statusCode: 201,
                 });
             });
