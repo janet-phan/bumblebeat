@@ -11,22 +11,21 @@ const getAllPlaylist = async (request, response, next) => {
     });
   } catch (error) {
     console.log(error);
-    next(error);
+    response.status(500).json({ error: "Internal Server Error" });
   }
 };
 
 const getPlaylistById = async (request, response, next) => {
-  try {
-    const { _id } = request.params;
-    const playlist = await Playlist.findOne({ _id });
-    response.status(200).json({
-      success: "This route points to the playlist page with the selected playlist",
-      data: playlist, siteData,
-      statusCode: 200,
-    });
-  } catch (error) {
-    next(error);
-  }
+  const { _id } = request.params;
+
+await Playlist.findOne({ _id: _id }).then((playlist) => {
+  response.status(200).json({
+    success: { message: "This route points to the playlist page with the selected playlist" },
+    data: playlist, siteData,
+    statusCode: 200
+  });  
+} 
+) 
 };
 
 module.exports = { getAllPlaylist, getPlaylistById };
