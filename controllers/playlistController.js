@@ -3,10 +3,10 @@ const Playlist = require('../models/playlistModel');
 
 const getAllPlaylist = async (request, response, next) => { 
   try {
-    const playlists = await Playlist.find({});
+    const playlist = await Playlist.find({});
     response.status(200).json({
       success: "This route points to the Playlists page with all of the playlists",
-      data: playlists,
+      data: playlist,
       statusCode: 200,
     });
   } catch (error) {
