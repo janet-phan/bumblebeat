@@ -20,6 +20,8 @@ const songRoutes = require("./routes/songRouter");
 const artistRoutes = require("./routes/artistRouter");
 const siteRoutes = require("./routes/siteRouter");
 const authRoutes = require("./routes/adminRouter");
+const playlistRoutes = require("./routes/playlistRouter");
+
 
 app.use(cors());
 app.use(helmet());
@@ -428,6 +430,7 @@ app.use(songRoutes);
 app.use(artistRoutes);
 app.use(siteRoutes);
 app.use(authRoutes);
+app.use(playlistRoutes);
 
 //server
 app.listen(PORT, () => {
