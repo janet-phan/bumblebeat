@@ -3,8 +3,8 @@ const router = express.Router();
 
 const { getAllPlaylist, getPlaylist } = require("../controllers/playlistController");
 
-router.get("/playlist", getAllPlaylist);
+router.get("/playlists", getAllPlaylist);
 
-router.get("/playlist/:_id", getPlaylist);
+router.get("/playlists/:_id", getPlaylist);
 
 module.exports = router;
