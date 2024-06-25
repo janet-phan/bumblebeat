@@ -27,5 +27,4 @@ const getArtist = async (request, response, next) => {
 }
 
 
-
 module.exports = { getAllArtists, getArtist };

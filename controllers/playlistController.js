@@ -1,7 +1,7 @@
 const siteData = require('../data/siteData');
 const Playlist = require('../models/playlistModel');
 
-const getAllPlaylists = async (request, response, next) => { 
+const getAllPlaylist = async (request, response, next) => { 
   try {
     const playlists = await Playlist.find({});
     response.status(200).json({
@@ -10,6 +10,7 @@ const getAllPlaylists = async (request, response, next) => {
       statusCode: 200,
     });
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };
@@ -20,11 +21,12 @@ const getPlaylistById = async (request, response, next) => {
     const playlist = await Playlist.findOne({ _id });
     response.status(200).json({
       success: "This route points to the playlist page with the selected playlist",
-      data: playlist,
+      data: playlist, siteData,
       statusCode: 200,
     });
   } catch (error) {
     next(error);
   }
 };
-module.exports = { getAllPlaylists, getPlaylistById };
+
+module.exports = { getAllPlaylist, getPlaylistById };

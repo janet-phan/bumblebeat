@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllPlaylists, getPlaylistById } = require("../controllers/playlistController");
+const { getAllPlaylist, getPlaylistById } = require("../controllers/playlistController");
 
-router.get("/playlists", getAllPlaylists);
+router.get("/playlists", getAllPlaylist);
 
 router.get("/playlists/:_id", getPlaylistById);
 
