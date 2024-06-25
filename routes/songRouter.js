@@ -7,7 +7,4 @@ router.get("/music", getAllSongs);
 
 router.get("/music/:_id", getSong);
 
-router.get("/music/songs/all", getAllSongs);
-router.get("/music/songs/:_id/", getSong);
-
 module.exports = router;

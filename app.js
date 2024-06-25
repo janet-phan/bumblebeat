@@ -19,7 +19,7 @@ app.use(morgan("dev"));
 const songRoutes = require("./routes/songRouter");
 const artistRoutes = require("./routes/artistRouter");
 const siteRoutes = require("./routes/siteRouter");
-const authRoutes = require("./routes/adminRouter");
+const adminRoutes = require("./routes/adminRouter");
 const playlistRoutes = require("./routes/playlistRouter");
 
 
@@ -429,7 +429,7 @@ app.get("/", (request, response, next) => {
 app.use(songRoutes);
 app.use(artistRoutes);
 app.use(siteRoutes);
-app.use(authRoutes);
+app.use(adminRoutes);
 app.use(playlistRoutes);
 
 //server
