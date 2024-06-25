@@ -47,9 +47,9 @@ router.post("/artist/create", createArtist);
 router.put("/artist/:_id/edit", editArtist);
 router.delete("/artist/:_id/delete", deleteArtist);
 
-router.post("/playlist/create-playlist", createPlaylist);
-router.put("/playlist/:_id/edit", editPlaylist);
-router.delete("/playlist/:_id/delete", deletePlaylist);
+router.post("/playlist/create", createPlaylist);
+router.put("/playlist/edit/:_id/", editPlaylist);
+router.delete("/playlist/delete/:_id", deletePlaylist);
 
 router.get("/unauthenticated", (request, response, next) => {
   response.redirect("/");
